@@ -19,4 +19,4 @@ SELECT c.first_name, c.last_name, s.ship_date, b.title FROM shipments s INNER JO
 SELECT COUNT(*) FROM books;
 SELECT COUNT(location) FROM subjects;
 SELECT location, COUNT(location) FROM subjects GROUP BY location;
-SELECT e.book_id, b.title, COUNT(e.edition) FROM books b INNER JOIN editions e ON b.id=e.book_id GROUP BY e.book_id, b.title;
+SELECT e.book_id, b.title, COUNT(e.edition) AS number_of_editions FROM books b INNER JOIN editions e ON b.id=e.book_id GROUP BY e.book_id, b.title;
